@@ -28,8 +28,18 @@ class CPage{
 		return $this->space;
 	}
 	public function getBody(){
+		// ($this->body); 
+
 		return $this->body;
 	}
-
+	public function updateTitle($var){
+		$this->setTitle();
+	}
+	public function updateSpace($var){
+		$this->setSpace();
+	}
+	public function updateBody($var){
+		$this->setSpace();
+	}
 }
 ?>
