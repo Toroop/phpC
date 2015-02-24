@@ -7,7 +7,7 @@ $api =  new  RestApiConfluence();
  $type = "page";
  $searchTitle = "TestCurl";
  $pageTitle = "Test title show ";
- $spaceKey= "TL"; // this is the spacekey
+ $spaceKey= "REP"; // this is the spacekey
  $body = new CPageBody();
 
  $body->setBodyHead();
@@ -22,9 +22,6 @@ $api =  new  RestApiConfluence();
 
  
   $api->setPage($type,$pageTitle,$spaceKey,$body);
-
-
-  // $editpageTitle = "edit page";
 
    //  send content to confluence
       $api->sendContent($api->getPage(),"POST_PAGE");

@@ -15,29 +15,35 @@ class CPage{
 	public function setTitle($var){
 		$this->title = $var;
 	}
+	
 	public function setSpace($var){
 		$this->space = $var;
 	}
+	
 	public function setBody($var){
 		$this->body = $var;
 	}
+	
 	public function getTitle(){
 		return $this->title;
 	}
+	
 	public function getSpace(){
 		return $this->space;
 	}
+	
 	public function getBody(){
-		// ($this->body); 
-
 		return $this->body;
 	}
+	
 	public function updateTitle($var){
 		$this->setTitle();
 	}
+	
 	public function updateSpace($var){
 		$this->setSpace();
 	}
+	
 	public function updateBody($var){
 		$this->setSpace();
 	}

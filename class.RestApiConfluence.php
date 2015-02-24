@@ -14,17 +14,13 @@
 		private $page;
 		private $curl;
 
-
 		public function setPage($type,$pageTitle,$space,$body){
 			$Page = new CPage();
 			$Page ->setType($type);
 			$Page->setTitle($pageTitle);
 			$Page->setSpace($space);
 			$Page->setBody($body);
-			// print_r($Page->getBody());
-			  // print_r($this->ParsheObjPageToArray($Page));  die;
 			$thePage =json_encode($this->ParsheObjPageToArray($Page));
-			// print_r("the page".$thePage); die;
 			$this->page =$thePage;
 		}
 
@@ -105,27 +101,21 @@
 							curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 							curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 							curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-							curl_setopt($ch, CURLOPT_POSTFIELDS,
-								  $this->getPage());
-							// print_r($ch); die;
+							curl_setopt($ch, CURLOPT_POSTFIELDS,$this->getPage());
 							return $this->setCurl($ch);
 						}
-
 				break;
 
 				case 'DELETE_PAGE':
-
+					//NEED TO BE IMPLEMENTED
 				break;
-
 			}
-
 		}
 
 		//start Action
 		public function startAction($ch)
 		{
 			$output =curl_exec($ch);
-			// print_r($output); 
 			$result = json_decode($output,true);
 			if (!empty($result) && array_key_exists("statusCode",$result) && $result ['statusCode'] == 400){
 				throw new Exception(PHP_EOL.$result["message"].PHP_EOL. "!!!!!!!!!!!Process will be stop!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -139,6 +129,4 @@
 			curl_close($ch);
 		}
 }
-
-
-	?>
+?>

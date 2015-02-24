@@ -5,8 +5,6 @@ class CStorage{
 
 	public function init(){
 		$this->init = array('storage' =>array("value"=>""));
-
-		// print_r($this->init); die;
 		return   $this->init;
 	} 
 	public function finish(){
@@ -24,13 +22,13 @@ class CStorage{
 		}
 		return $arr;
 	}
-function getInitStatus(){
-	return $this->init;
-}
-function getFinishStatus(){
-	return $this->init;
-}
-
+	function getInitStatus(){
+		return $this->init;
+	}
+	
+	function getFinishStatus(){
+		return $this->init;
+	}
 }
 
 ?>
