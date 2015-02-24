@@ -17,7 +17,7 @@ class CPage{
 	}
 	
 	public function setSpace($var){
-		$this->space = $var
+		$this->space = $var;
 	}
 	
 	public function setBody($var){

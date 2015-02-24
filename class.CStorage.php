@@ -18,7 +18,14 @@ class CStorage{
 		switch ($type) {
 			case 'paragraf':
 				$arr= $content;
-				break;	
+			break;
+			case 'table':
+			 $arr = "<table>";
+			 $arr .="<th>".$content."</th>";
+			 $arr .="<th>".$content."</th>";
+			 $arr .="<tr> <td>".$content."col1"."</td><td>".$content."col2"."</td></tr>"; 
+			 $arr .= "</table>";
+			 break;	
 		}
 		return $arr;
 	}
